@@ -1,7 +1,8 @@
-# Mobile-Emulation-Pytest-Selenium
-Automating in mobile mode using python selenium
+### Mobile-Emulation-Pytest-Selenium
 
-####How to run the script
+- Automating in mobile mode using python selenium
+
+#### How to run the script
 
 ```javascript
 //Run script with a random device
