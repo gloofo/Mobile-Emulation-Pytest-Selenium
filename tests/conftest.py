@@ -25,19 +25,13 @@ def setup(device):
     else:
         options.add_experimental_option("mobileEmulation", {"deviceName": getRandom})
 
-    try:
-        url = data()['base']
-        driver = webdriver.Chrome(options=options)
-        driver.maximize_window()
-        driver.get(url)
-        driver.execute_script("return document.readyState == 'complete';")
+    url = data()['base']
+    driver = webdriver.Chrome(options=options)
+    driver.maximize_window()
+    driver.get(url)
+    driver.execute_script("return document.readyState == 'complete';")
+    yield driver
+    driver.quit()
+    print("TEST TEARDOWN")
 
-        yield driver
-        driver.quit()
-        print("TEST TEARDOWN")
-
-    except Exception as e:
-        print(e)
-
-    
 
