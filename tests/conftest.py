@@ -1,11 +1,7 @@
 import sys
-import os
+sys.path.append(".")
 
-src_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src'))
-sys.path.append(src_path)
-
-from modules import *
-from source import *
+from src.module import *
 
 def pytest_addoption(parser):
     parser.addoption("--device", action="store", default=None)
