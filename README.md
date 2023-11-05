@@ -1,16 +1,43 @@
-### Mobile-Emulation-Pytest-Selenium
+### What does this thing do?
 
-- Automating in mobile mode using python selenium
+-- Automates the following:
+- User registration
+  - Verifies validation of each field.
+  - Verifies age if < 18.
+- User Login
 
-#### How to run the script
+-- Please refer to Tool Shop url:
+https://practicesoftwaretesting.com/
 
-```javascript
-//Run script with a random device
-pytest -v -rA
 
-//Run script with your choice of  device
-pytest -v -rA --device "your device name"
+### Project Dependencies
+---------------------
 
+- *`pyyaml`*
+- *`pytest`*
+- *`Faker`*
+- *`selenium`*
+
+
+### Installation
+---------------------
+**Clone repository**
+> git clone https://github.com/gloofo/Mobile-UI-Tool-Shop-Automation
+
+**Install dependencies:**
+> pip install -r requirements.txt
+
+Run:
+- Selects random device name if not given:
+> pytest -v -rA
+- Run on a specific device name:
+> pytest -v -rA --device "Device Name Here"
+
+``
 Note: If you ever encounter an error running the command
-it means the device cannot run the script or not compatible?
-```
+it means that the emulated device cannot run the script.
+``\
+``example error: Message: invalid argument: cannot parse capability: goog:chromeOptions or InvalidArgumentException``\
+\
+``to solve this, just re-run the command``
+ 
