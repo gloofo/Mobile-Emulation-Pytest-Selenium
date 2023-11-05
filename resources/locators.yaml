@@ -1,0 +1,35 @@
+base:                           'https://practicesoftwaretesting.com/'
+
+nav:
+    menu-btn:                    '.navbar-toggler span'
+    home:                       '.nav-link.active'
+    categories:
+        main:                   '.nav-link.dropdown-toggle'
+        panel:                  '.dropdown-menu.show'
+        hand-tool:              '.dropdown-menu.show li:first-child'
+        power-tool:             '.dropdown-menu.show li:nth-child(2)'
+        special-tool:           '.dropdown-menu.show li:nth-child(3)'
+        rentals:                '.dropdown-menu.show li:last-child'
+    contact:                    'li:nth-child(3) .nav-link'
+    sign-in:                    'li:last-child .nav-link'
+
+register:
+    main:                       'a[href="#/auth/register"]'
+    panel:                      '.col-lg-6.auth-form'
+    submit:                     '.btnSubmit'
+    form:
+        alert:                  '.alert.alert-danger'
+        main:                   '.col-lg-8.auth-form'
+        firstname:              '#first_name'
+        lastname:               '#last_name'
+        dob:                    '#dob'
+        address:                '#address'
+        postcode:               '#postcode'
+        city:                   '#city'
+        state:                  '#state'
+        country:                '#country'
+        phone:                  '#phone'
+        email:                  '#email'
+        password:               '#password'
+        register:               'button[type="submit"]'
+        mustbe:                 '.help-block'

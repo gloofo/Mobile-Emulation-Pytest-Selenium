@@ -1,6 +1,3 @@
-import sys
-sys.path.append(".")
-
 from src.module import *
 
 def pytest_addoption(parser):
@@ -11,27 +8,23 @@ def device(request):
     return request.config.getoption("device")
 
 @pytest.fixture(scope='session')
-def setup(device):
-    print("TEST SETUP")
+def driver(device):
+    #setup
     options = Options()
     options.add_argument("--hide-scrollbars")
-    #randomly pick a device name in the yaml file
-    devices = data()['deviceName']
+    devices = phone()['deviceName']
     getRandom = random.choice(devices)
 
-    #if device name is not given in the command-line condition
     if device:
         options.add_experimental_option("mobileEmulation", {"deviceName": device})
     else:
         options.add_experimental_option("mobileEmulation", {"deviceName": getRandom})
 
-    url = data()['base']
     driver = webdriver.Chrome(options=options)
-    driver.maximize_window()
-    driver.get(url)
-    driver.execute_script("return document.readyState == 'complete';")
+    driver.get(data('base'))
     yield driver
+    #teardown
+    driver.close()
     driver.quit()
-    print("TEST TEARDOWN")
 
 
