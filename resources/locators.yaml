@@ -33,3 +33,10 @@ register:
         password:               '#password'
         register:               'button[type="submit"]'
         mustbe:                 '.help-block'
+
+main:
+    sidepanel:                  '.container .btn-group-vertical'
+    favorites:                  '.container .btn-group-vertical a:first-child'
+    profile:                    '.container .btn-group-vertical a:nth-child(2)'
+    invoices:                   '.container .btn-group-vertical a:nth-child(3)'
+    messages:                   '.container .btn-group-vertical a:last-child'
